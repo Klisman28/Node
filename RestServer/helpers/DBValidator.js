@@ -17,7 +17,16 @@ const esEmailvalido = async(correo = '') => {
 
 }
 
+const isIdtrue = async(id = '') => {
+    const idreal = await Usuario.findById(id);
+    if (!idreal) {
+        throw Error(`El id ${idreal.id} no existe`)
+
+    }
+}
+
 module.exports = {
     esRolevalido,
-    esEmailvalido
+    esEmailvalido,
+    isIdtrue
 }
